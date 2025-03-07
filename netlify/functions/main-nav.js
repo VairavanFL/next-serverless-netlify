@@ -15,7 +15,7 @@ console.log("--------CACHE_MAX_AGE----", process.env.CACHE_MAX_AGE);
 const CACHE_MAX_AGE = process.env.CACHE_MAX_AGE ?? 3600;
 
 export default async (req, context) => {
-  console.log("----------req--------------", req);
+  console.log("----------req--------------", req, context);
   const { purgecache, deliveryKey, stagingSite } = req.queryStringParameters;
 
   if (!deliveryKey) {
