@@ -14,7 +14,7 @@ console.log("--------CACHE_MAX_AGE----", process.env.CACHE_MAX_AGE);
 
 const CACHE_MAX_AGE = process.env.CACHE_MAX_AGE ?? 3600;
 
-const handler = async (req, context) => {
+export default async (req, context) => {
   const { purgecache, deliveryKey, stagingSite } = req.queryStringParameters;
 
   if (!deliveryKey) {
@@ -55,6 +55,8 @@ const handler = async (req, context) => {
   };
 };
 
-module.exports = {
-  handler,
-};
+// module.exports = {
+//   handler,
+// };
+
+// export default handler;
